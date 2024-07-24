@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onload = function () {
+        window.alert("不要着急,先来登录叭!");
+      };
+    </script>
+    <form align="center" action="index.html">
+      用户名:<input type="text" name="Name" id="NameID" /><br /><br />
+      密&nbsp;&nbsp;&nbsp;&nbsp;码:<input
+        type="text"
+        name="Pwd"
+        id="PwdID"
+      /><br /><br />
+      <input type="submit" onclick="return Check()" value="登录" />
+    </form>
+
+    <!--判断用户名、密码是否正确-->
+    <script type="text/javascript">
+      //获取URL参数
+      function getQueryParams(url) {
+        // 如果未提供URL，则使用当前页面的URL
+        url = window.location.href;
+        // 获取查询字符串部分
+        var queryStr = url.split("?")[1];
+
+        // 如果没有查询字符串，则返回一个空对象
+        if (!queryStr) return {};
+
+        // 将查询字符串分割成键值对数组
+        var pairs = queryStr.split("&");
+
+        // 创建一个空对象来存储参数
+        var params = {};
+
+        // 遍历键值对数组，将每个键值对添加到params对象中
+        pairs.forEach(function (pair) {
+          pair = pair.split("=");
+          params[decodeURIComponent(pair[0])] = decodeURIComponent(
+            pair[1] || ""
+          );
+        });
+
+        return params;
+      }
+
+      // 使用示例
+      var params = getQueryParams();
+      console.log(params); // 打印出当前URL的查询参数
+    </script>
+
+    <div>
+      <a href="2.html" target="_self">继续看下去叭</a>
+    </div>
+  </body>
+</html>
